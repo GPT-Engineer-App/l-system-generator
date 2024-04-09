@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L-System Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="bg-blue-500 p-4 text-white text-center text-2xl font-bold mb-8">L-System Generator</header>
+
+    <div class="flex">
+      <aside class="w-1/4 bg-gray-100 p-4">
+        <div class="mb-4">
+          <label class="block font-bold mb-2" for="axiom">Axiom:</label>
+          <input class="border p-2 w-full" type="text" id="axiom" name="axiom" value="F" />
+        </div>
+        <div class="mb-4">
+          <label class="block font-bold mb-2" for="rules">Rules:</label>
+          <textarea class="border p-2 w-full" id="rules" name="rules" rows="4">F=F+F-F-F+F</textarea>
+        </div>
+        <div class="mb-4">
+          <label class="block font-bold mb-2" for="iterations">Iterations:</label>
+          <input class="border p-2 w-full" type="number" id="iterations" name="iterations" value="4" />
+        </div>
+        <button id="generate" class="bg-blue-500 text-white font-bold py-2 px-4">Generate</button>
+      </aside>
+
+      <main class="flex-1 p-4">
+        <canvas id="canvas" class="border border-gray-400"></canvas>
+        <div class="mt-4">
+          <label class="font-bold">Generated String:</label>
+          <div id="output" class="font-mono text-sm"></div>
+        </div>
+      </main>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
